@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>작은 오르골에 오신 것을 환영합니다!</title>
+        <style>
+            #title {
+                position : relative ;
+                left : 320px;
+                top : 20px;
+            }
+            #Menu {
+                height : 640px;
+                border-right : thick solid #929191;
+                float : left;
+            }
+            .video {
+                float : left;
+                padding : 10px 10px 10px 30px;
+            }
+            .menu1 a{cursor:pointer;}
+            .menu1 .hide{display:none;}
+            .menu2 a{cursor:pointer;}
+            .menu2 .hide{display:none;}
+        </style>
+    </head>
+    <body>
+        <div id="title">
+            <h1 style="margin-left:auto; margin-right: auto; width: 50%">작은 오르골</h1>
+        </div>
+        <br><br>
+        <hr size="5">
+        <div id="Menu">
+            <div id="search">
+                <form name="input" action="getid.jsp" method="get">
+                    검색 내용 : 
+                    <input type="text" name="song">
+                    <input type="submit" value="검색">
+                </form>
+            </div>
+            <div id="category">
+            <ul>
+                <li class="menu1">
+                    <a>클래식</a>
+                    <ul class="hide">
+                        <li class="menu2">
+                            <a>쇼팽</a>
+                            <ul class="hide">
+                                <li>녹턴Op.9No.2</li>
+                                <li>즉흥환상곡</li>
+                            </ul>
+                        </li>
+                        <li class="menu2">
+                            <a>베토벤</a>
+                            <ul class="hide">
+                                <li>녹턴Op.9No.2</li>
+                                <li>즉흥환상곡</li>
+                            </ul>
+                        </li>
+                        <li class="menu2">
+                            <a>슈베르트</a>
+                            <ul class="hide">
+                                <li>녹턴Op.9No.2</li>
+                                <li>즉흥환상곡</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu1">
+                    <a>K-POP</a>
+                    <ul class="hide">
+                        <li>아이유</li>
+                        <li>태연</li>
+                        <li>윤하</li>
+                        <li>성시경</li>
+                    </ul>
+                </li>
+                <li class="menu1">
+                    <a>뉴에이지</a>
+                    <ul class="hide">
+                        <li>Stevebarakatt</li>
+                        <li>hisaishi joe</li>
+                    </ul>
+                </li>
+                <li class="menu1">
+                    <a>OST</a>
+                    <ul class="hide">
+                        <li>Drama</li>
+                        <li>Movie</li>
+                        <li>Animation</li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+        </div>
+        <div class="video">
+            <h1 style="text-align:center">히사이시조(Joe Hisaishi) - Summer(키쿠지로의여름OST)</h1>
+            <iframe width="680" height="360" src="https://www.youtube.com/embed/iSWonvPCxLs"
+             frameborder="0" allowfullscreen></iframe>
+            <br><br>
+            <a href="https://www.youtube.com/watch?v=iSWonvPCxLs" target="_blank">Youtube에서 보기</a>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".menu1>a").click(function(){
+                var submenu = $(this).next("ul");
+
+                if(submenu.is(":visible")){
+                    submenu.slideUp();
+                }else{
+                    submenu.slideDown();
+                }
+            });
+
+            $(".menu2>a").click(function(){
+                var submenu = $(this).next("ul");
+
+                if(submenu.is(":visible")){
+                    submenu.slideUp();
+                }else{
+                    submenu.slideDown();
+                }
+            });
+        });
+    </script>
+</html>
