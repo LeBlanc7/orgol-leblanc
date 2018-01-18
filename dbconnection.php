@@ -1,5 +1,5 @@
 <?php
-function dbconn(){
+
 $db_host = "localhost";
 $db_user = "root";
 $db_pw = "111111";
