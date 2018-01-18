@@ -11,8 +11,8 @@ if($connect)
 else
   echo "db is not connected";
 
-$result = mysqli_query($connect,"insert into info(song_name,song_artist,song_url)
-          value('$_POST[song_name]','$_POST[song_artist]','$_POST[song_url]')");
+$result = mysqli_query($connect,"insert into info(song_artist,song_name,song_url)
+          value('$_POST[song_artist]','$_POST[song_name]','$_POST[song_url]')");
 echo $result;
 echo "<br>";
 
