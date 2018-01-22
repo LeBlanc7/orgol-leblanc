@@ -14,14 +14,9 @@
                     $.ajax({
                         url : "test.php",
                         type : "POST",
-                        dataType : "json",
                         data : {song_name : song},
                         success:function(data) {
-                            if(data.status == 'ok'){
-                                alert(data.result);
-                            }else{
-                                alert("not found..");
-                            }
+                            alert(data);
                         }
                     });
                 });
@@ -29,6 +24,6 @@
         </script>
     </head>
     <body>
-        <li class="menu"><a>Hi</a></li>
+        <li class="menu"><a>Spring Waltz</a></li>
     </body>
 </html>
