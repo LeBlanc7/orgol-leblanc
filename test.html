@@ -10,10 +10,10 @@
             $(document).ready(function(){
                 $(".menu>a").click(function(){
                     var song = $('.menu>a').text();
-                    
+
                     $.ajax({
                         url : "test.php",
-                        type : "POST",
+                        type : "get",
                         data : {song_name : song},
                         success:function(data) {
                             alert(data);
