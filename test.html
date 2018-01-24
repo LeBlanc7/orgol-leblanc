@@ -1,29 +1,77 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <style>
-            .menu a{cursor:pointer;}
-        </style>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-        type="text/javascript"></script>
-        <script defer>
-            $(document).ready(function(){
-                $(".menu>a").click(function(){
-                    var song = $('.menu>a').text();
 
-                    $.ajax({
-                        url : "test.php",
-                        type : "get",
-                        data : {song_name : song},
-                        success:function(data) {
-                            alert(data);
-                        }
-                    });
-                });
-            });
-        </script>
+<html>
+
+    <head>
+
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+
     </head>
+
     <body>
-        <li class="menu"><a>Spring Waltz</a></li>
+
+        <div id="result"></div>
+
+        <input type="text" id="msg" />
+
+        <input type="button" value="get result" id="getResult" />
+
+        <script>
+
+            $('#getResult').click( function() {
+
+                $('#result').html('');
+
+	        // 사용자가 getResult 버튼을 눌렀을 때 텍스트 노드에 있는 결과값을 지워준다.
+
+                $.ajax({
+
+                    url:'test.php',
+
+                    dataType:'json',
+
+	            // 서버가 리턴해주는 데이터 타입이 json이다.
+
+                    type:'POST',
+
+                    data:{'msg':$('#msg').val()},
+
+	            // data 속성 내부에 또다른 {}가 있다. 중괄호 내부는 객체이다.
+
+                    // data: 서버에 전송할 데이터로서 값은 key와 value로 이루어진 객체
+
+                    success:function(result){
+
+		    // 인자 result에는 서버에서 리턴해준 배열이 들어감
+
+                    // 배열이 들어온 이유는 dataType속성을 JSON으로 했기 때문에 리턴되는 데이터가 텍스트더라도 내부적으로 그 데이터를                                     // JSON으로 해석하여 배열로 변환
+
+                    // 그래서 배열에 있는 result값을 체크하면 result가 true라면 성공 이벤트 관련 로직을 출력한다.
+
+                    // 서버와의 통신이 성공하면 호출되는 이벤트 핸들러인 function(result)
+
+                    // result 인자에는 서버가 리턴해주는 데이터가 들어감
+
+                        if(result['result']==true){
+
+		    //result['result']는 연상 배열인가 확인하자
+
+                          $('#result').html(result['msg']);
+
+                        }
+
+                    }
+
+                });
+
+            })
+
+       // 자바스크립트에서 중괄호는 객체를 의미 , $ajax{}도 마찬가지이다. 
+
+        </script>
+
     </body>
+
 </html>
+
+
