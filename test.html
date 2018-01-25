@@ -11,14 +11,18 @@
                 $(".menu>a").click(function(){
                     var song = $('.menu>a').text();
 
-                    alert(song);
-
                     $.ajax({
-                        url : "test.php",
-                        type : "get",
+                        url : 'test.php',
+                        type : 'POST',
+                        dataType : 'json',
                         data : {song_name : song},
                         success:function(data) {
-                            alert(data);
+                            if(data.status =='ok'){
+                                alert(OK);
+                            }
+                            else {
+                                alert(NO);
+                            }
                         }
                     });
                 });

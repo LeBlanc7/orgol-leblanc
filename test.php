@@ -22,9 +22,6 @@
             $data['status'] = 'err';
             $data['result'] = '';
         }
-        
-        mysqli_free_result($result);
-        mysqli_close($connect);
 
         echo json_encode($data);
     }
