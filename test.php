@@ -1,5 +1,31 @@
 <? php
+    if(!empty($_POST['song_name'])){
+        $data = array();
 
-echo json_encode(array('result'=>true, 'msg'=>$_REQUEST['msg']));
+        $db_host = "localhost";
+        $db_user = "root";
+        $db_pw = "111111";
+        $db_name = "tutorials";
+        $connect = mysqli_connect($db_host,$db_user,$db_pw,$db_name);
 
+        if(mysqli_connect_errno()){
+            printf("Connect failed : %s\n",mysqli_connect_error());
+            exit();
+        }
+
+        $query = "SELECT song_url FROM info WHERE song_name = {$_POST['song_name']}";
+        if(result = mysqli_query($connect,$query)) {
+            $url = mysqli_fetch_row($result);
+            $data['status'] = 'ok';
+            $data['result'] = $url[0];
+        }else{
+            $data['status'] = 'err';
+            $data['result'] = '';
+        }
+        
+        mysqli_free_result($result);
+        mysqli_close($connect);
+
+        echo json_encode($data);
+    }
 ?>
