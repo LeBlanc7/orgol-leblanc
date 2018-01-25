@@ -1,6 +1,5 @@
 <? php
     if(!empty($_POST['song_name'])){
-        $data = array();
 
         $db_host = "localhost";
         $db_user = "root";
@@ -16,13 +15,9 @@
         $query = "SELECT song_url FROM info WHERE song_name = {$_POST['song_name']}";
         if(result = mysqli_query($connect,$query)) {
             $url = mysqli_fetch_row($result);
-            $data['status'] = 'ok';
-            $data['result'] = $url[0];
-        }else{
-            $data['status'] = 'err';
-            $data['result'] = '';
+            $data = url[0];
         }
 
-        echo json_encode($data);
+        echo $data;
     }
 ?>
