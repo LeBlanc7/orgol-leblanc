@@ -4,27 +4,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
         type="text/javascript"></script>
         <script defer>
-            $(document).ready(function(){
-                $("getSong").click(function(){
-                    $.ajax({
-                        url : 'test.php',
-                        type : 'POST',
-                        data : {song_name : song},
-                        success:function(data) {
-                            if(data.status =='ok'){
-                                alert(OK);
-                            }
-                            else {
-                                alert(NO);
-                            }
-                        }
-                    });
-                });
-            });
         </script>
     </head>
     <body>
-        <input type="text">
-        <input type="button" id="getSong" value="hi">
+        <a href="test.php?song_name='Spring Waltz'" class="song">test</a>
     </body>
 </html>
