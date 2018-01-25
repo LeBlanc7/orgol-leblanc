@@ -53,8 +53,10 @@
                     }
                 });
                 $(".song>a").click(function(){
-                    
-                    song_name = $(".song>a").text();
+
+                    song_name = $(this).text();
+
+                    alert(song_name);
 
                     $.ajax({
                         type:'GET',
