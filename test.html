@@ -13,16 +13,16 @@
                     song_name = $(".menu>a").text();
 
                     $.ajax({
-                        type:'POST',
+                        type:'GET',
                         url:'test.php',
                         dataType : "json",
                         data : {song_name : song_name},
                         success:function(data){
                             if(data.status=='ok'){
-                                alert("OK");
+                                alert(data.result);
                             }
                             else {
-                                alert("NO");
+                                alert("Error");
                             }
                         }
                     })

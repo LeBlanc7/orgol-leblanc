@@ -15,6 +15,7 @@
     }
 
     $query = "SELECT song_url FROM info WHERE song_name = '$song_name'";
+
     if($result = mysqli_query($connect,$query)) {
         $url = mysqli_fetch_row($result);
         $data['status'] = 'ok';
