@@ -1,5 +1,6 @@
 <?php
-    
+    $data = array();
+
     $song_name = $_GET['song_name'];
 
     $db_host = "localhost";
@@ -16,9 +17,13 @@
     $query = "SELECT song_url FROM info WHERE song_name = '$song_name'";
     if($result = mysqli_query($connect,$query)) {
         $url = mysqli_fetch_row($result);
-        $data = $url[0];
+        $data['status'] = 'ok';
+        $data['result'] = $url[0];
+    }else{
+        $data['status'] = 'err';
+        $data['result'] = '';
     }
 
-    echo $data;
+    echo json_encode($data);    
 
 ?>
