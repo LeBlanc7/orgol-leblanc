@@ -52,6 +52,25 @@
                         submenu.slideDown();
                     }
                 });
+                $(".song>a").click(function(){
+                    
+                    song_name = $(".song>a").text();
+
+                    $.ajax({
+                        type:'GET',
+                        url:'get_url.php',
+                        dataType : "json",
+                        data : {song_name : song_name},
+                        success:function(data){
+                            if(data.status=='ok'){
+                                alert(data.result);
+                            }
+                            else {
+                                alert("Error");
+                            }
+                        }
+                    })
+                });
             });
         </script>
     </head>
