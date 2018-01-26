@@ -14,15 +14,17 @@
         exit();
     }
 
-    $query = "SELECT song_url FROM info WHERE song_name = '$song_name'";
+    $query = "SELECT song_artist,song_url FROM info WHERE song_name = '$song_name'";
 
     if($result = mysqli_query($connect,$query)) {
-        $url = mysqli_fetch_row($result);
+        $song = mysqli_fetch_row($result);
         $data['status'] = 'ok';
-        $data['result'] = $url[0];
+        $data['artist'] = $song[0];
+        $data['url']    = $song[1];
     }else{
         $data['status'] = 'err';
-        $data['result'] = '';
+        $data['artist'] = '';
+        $data['url']    = '';
     }
 
     echo json_encode($data);    

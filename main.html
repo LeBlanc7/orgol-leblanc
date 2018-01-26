@@ -56,8 +56,6 @@
 
                     song_name = $(this).text();
 
-                    alert(song_name);
-
                     $.ajax({
                         type:'GET',
                         url:'get_url.php',
@@ -65,7 +63,8 @@
                         data : {song_name : song_name},
                         success:function(data){
                             if(data.status=='ok'){
-                                alert(data.result);
+                                alert(data.artist);
+                                alert(data.url);
                             }
                             else {
                                 alert("Error");
