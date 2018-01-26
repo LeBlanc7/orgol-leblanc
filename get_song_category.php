@@ -14,7 +14,7 @@
         while($artist=mysqli_fetch_row($get_artist)){
             echo "<li class='menu'>";
             echo "<a>$artist[0]</a>";
-            echo "<ul class='hide>";
+            echo "<ul class='hide'>";
 
             $get_name = mysqli_query($connect,"select song_name from info where song_artist='$artist[0]'");
             while($name=mysqli_fetch_row($get_name)){
