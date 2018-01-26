@@ -16,6 +16,13 @@
             echo "<a>$artist[0]</a>";
             echo "<ul class='hide>";
 
+            $get_name = mysqli_query($connect,"select song_name from info where song_artist='$artist[0]'");
+            while($name=mysqli_fetch_row($get_name)){
+                echo "<li class='song'>";
+                echo "<a>$name[0]</a>";
+                echo "</li>";
+            }
+
             echo "</ul>";
             echo "</li>";
         }
