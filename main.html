@@ -63,8 +63,13 @@
                         data : {song_name : song_name},
                         success:function(data){
                             if(data.status=='ok'){
-                                alert(data.artist);
-                                alert(data.url);
+                                $("div.video").html(
+                                    "<h1>" + data.artist + "-" + song_name + "</h1>" +
+                                    "<iframe width='680' height='360' src=" + data.url
+                                    + "frameborder='0' allowfullscreen></iframe>" +
+                                    "<br><br> " +
+                                    "<a href=" + data.url + "target='_blank'>Youtube에서 보기</a>"
+                                );
                             }
                             else {
                                 alert("Error");
