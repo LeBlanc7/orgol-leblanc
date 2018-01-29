@@ -101,6 +101,13 @@
             </div>
         </div>
         <div class="video">
+            <?php
+                $song = $_POST['song'];
+
+                if($song) {
+                    include 'search_song.php';
+                }
+            ?>
         </div>
         <div class="recommend">
         </div>
