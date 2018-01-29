@@ -10,8 +10,6 @@
 
     }*/
 
-    echo("<script>location.replace('test2.html');</script>");
-
-    echo("<script>viewSearchResult();</script>");
+    echo "<script>viewSearchResult()</script>";
 
 ?>
