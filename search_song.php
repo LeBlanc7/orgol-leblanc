@@ -10,6 +10,6 @@
 
     }*/
 
-    echo "<script>viewSearchResult()</script>";
+    echo "<script>viewSearchResult();</script>";
 
 ?>
