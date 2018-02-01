@@ -74,10 +74,6 @@
                     })
                 });
             });
-            function viewSearchResult() {
-                document.getElementsByClassName("video").innerHTML = "<h1>hi</h1>";
-            }
-
         </script>
     </head>
     <body style="overflow-x:hidden; overflow-y:auto">
@@ -86,6 +82,7 @@
         </div>
         <br><br>
         <hr size="5">
+        <div class="wrap">
         <div id="Menu">
             <div id="search">
                 <form name="input" action="getid.jsp" method="get">
@@ -100,7 +97,8 @@
                 ?>
             </div>
         </div>
-        <div class="video">
+        <div id="video">
+            <h1> hi </h1>
             <?php
                 $song = $_POST['song'];
 
