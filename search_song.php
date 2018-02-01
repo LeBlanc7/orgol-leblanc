@@ -11,7 +11,7 @@
             while($song = mysqli_fetch_row($result)) {
                 echo "<div class='wrap'>";
                 echo "<div class='image'>";
-                echo "<img src='https://img.youtube.com/vi/$song[2]/default.jpg'>";
+                echo "<img src='https://img.youtube.com/vi/$song[2]/default.jpg' class='img' name='$song[1]'>";
                 echo "</div>";
                 echo "<div class='text'>";
                 echo "<a>$song[1]</a>";
