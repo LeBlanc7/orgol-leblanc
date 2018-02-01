@@ -36,6 +36,8 @@
             .menu a{cursor:pointer;}
             .menu .hide{display:none;}
             .song a{cursor:pointer;}
+            #video .image {float :left;}
+            #video .text {float : right;}
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
         <script defer>
@@ -74,10 +76,6 @@
                     })
                 });
             });
-            function showResult() {
-                var div = document.getElementById("video")
-                div.innerHTML = "<a>aaaa</a>";
-            }
         </script>
     </head>
     <body style="overflow-x:hidden; overflow-y:auto">
@@ -89,7 +87,7 @@
         <div class="wrap">
         <div id="Menu">
             <div id="search">
-                <form name="input" action="getid.jsp" method="get">
+                <form name="input" action="search_song.php" method="post">
                     검색 내용 : 
                     <input style="width:110px" type="text" name="song">
                     <input type="submit" value="검색">
