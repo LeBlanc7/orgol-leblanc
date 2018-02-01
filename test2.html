@@ -130,7 +130,7 @@
         <div class="wrap">
         <div id="Menu">
             <div id="search">
-                <form name="input" method="post">
+                <form name="input" method="get">
                     검색 내용 : 
                     <input style="width:110px" type="text" name="song">
                     <input type="submit" value="검색">
@@ -144,7 +144,7 @@
         </div>
         <div id="video">                    
             <?php
-                $song = $_POST['song'];
+                $song = $_GET['song'];
 
                 if($song) {
                     include 'search_song.php';
