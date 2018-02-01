@@ -10,9 +10,9 @@
         else {
             while($song = mysqli_fetch_row($result)) {
                 echo "<h1> $song[0] - $song[1]</h1>";
-                echo "<iframe width='680' height='360' src='https://www.youtube.com/embed/$song[2]' frameborder='0' allowfullscreen></iframe>";
-                echo "<br><br> " ;
-                echo "<a href='https://www.youtube.com/watch?v=$song[2] 'target='_blank'>Youtube에서 보기</a>"        
+                ehco "<img src='https://img.youtube.com/vi/$song[2]/0.jpg'>";
+                echo "<br><br> ";
+                echo "<a href='https://www.youtube.com/watch?v=$song[2] 'target='_blank'>Youtube에서 보기</a>";      
             }
         }
     }
