@@ -9,11 +9,10 @@
        $song = mysqli_fetch_row($result);
        if(!$song) echo "<h1> no song in DB</h1>";
        else {
-           while($song){
                 echo "<p>artist is $song[0]</p>";
                 echo "<p>name is $song[1]</p>";
                 echo "<p>url is $song[2]</p>";
-           }
+
        }
 
     }
