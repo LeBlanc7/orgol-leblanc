@@ -14,7 +14,9 @@
                 echo "<img src='https://img.youtube.com/vi/$song[2]/default.jpg' class='img' name='$song[1]'>";
                 echo "</div>";
                 echo "<div class='text'>";
+                echo "<div class='song'>";
                 echo "<a>$song[1]</a>";
+                echo "</div>";
                 echo "<hr size='1'>";
                 echo "<a>$song[0]&emsp;</a>";
                 echo "<a href='https://www.youtube.com/watch?v=$song[2] 'target='_blank'>Youtube에서 보기</a>"; 
