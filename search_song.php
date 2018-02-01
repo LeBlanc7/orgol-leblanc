@@ -16,7 +16,7 @@
                 echo "<div class='text'>";
                 echo "<a>$song[1]</a>";
                 echo "<hr size='1'>";
-                echo "<a>$song[0]</a>";
+                echo "<a>$song[0]&emsp;</a>";
                 echo "<a href='https://www.youtube.com/watch?v=$song[2] 'target='_blank'>Youtube에서 보기</a>"; 
                 echo "</div></div>";     
             }
