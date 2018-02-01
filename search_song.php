@@ -1,6 +1,6 @@
 <?php
 
-    $song_name = $_POST['song'];
+    $song_name = $_GET['song'];
 
     include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
 
