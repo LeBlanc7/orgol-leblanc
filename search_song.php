@@ -6,7 +6,8 @@
 
     $query = "SELECT song_artist,song_name,song_url,song_category FROM info WHERE song_artist like '%$song_name%'";
     if($result = mysqli_query($connect,$query)) {
-        if(!($song = mysqli_fetch_row($result))) echo "<h1> no song in DB</h1>";
+        $song = mysqli_fetch_row($result) ;
+        if(!$song) { echo "<h1> no song in DB</h1>"; }
         do {
             echo "<div class='wrap'>";
             echo "<div class='image'>";
@@ -20,7 +21,7 @@
             echo "<a>$song[0]&emsp;</a>";
             echo "<a href='https://www.youtube.com/watch?v=$song[2] 'target='_blank'>Youtube에서 보기</a>"; 
             echo "</div></div>";     
-        } while($song = mysqli_fetch_row($result))      
+        } while( $song = mysqli_fetch_row($result)) ;
     }
 
 ?>
