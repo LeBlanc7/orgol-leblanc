@@ -10,7 +10,7 @@
         if(!$song) { echo "<h1> There is no artist like '$song_name' in DB</h1>"; }
         else {
             echo "<div class='wrap1'>";
-            echo "<p style='font-size:18px'>&#14;Artist로 $song_name을 검색한 결과</p>";
+            echo "<p style='font-size:18px'>&#14;Artist로 '$song_name'을(를) 검색한 결과</p>";
             echo "</div>";
 
             echo "<div class='wrap1'>";
@@ -42,7 +42,7 @@
         if(!$song2) { echo "<h1> There is no song like '$song_name' in DB</h1>"; }
         else {
             echo "<div class='wrap1'>";
-            echo "<p style='font-size:18px'>&#14;Song Name으로 $song_name을 검색한 결과</p>";
+            echo "<p style='font-size:18px'>&#14;Song Name으로 '$song_name'을(를) 검색한 결과</p>";
             echo "</div>";
 
             echo "<div class='wrap1'>";
