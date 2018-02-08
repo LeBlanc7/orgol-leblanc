@@ -99,7 +99,7 @@
                         }
                     })
                 });
-                $(".img,#back").click(function(){
+                $(".img").click(function(){
                     var song_name = $(this).attr('name');
 
                     $.ajax({
@@ -119,6 +119,17 @@
                             else {
                                 alert("Error");
                             }
+                        }
+                    })                  
+                });
+                $("#back").click(function(){
+                    var song_name = $(this).attr('name');
+
+                    $.ajax({
+                        type:'GET',
+                        url:'song/search_song.php',
+                        data : {song : song_name},
+                        success:function(data){
                         }
                     })                  
                 });
