@@ -122,17 +122,6 @@
                         }
                     })                  
                 });
-                $("#back").click(function(){
-                    var song_name = $(this).attr('name');
-
-                    $.ajax({
-                        type:'GET',
-                        url:'song/search_song.php',
-                        data : {song : song_name},
-                        success:function(data){
-                        }
-                    })                  
-                });
             });
         </script>
     </head>
@@ -213,7 +202,10 @@
                         </div>
                 </div> 
             </div>
-            <button id="back" name="쇼팽">검색목록으로</button>
+            <form action="song/search_song.php" method="get"> 
+                <input type="hidden" name="Spring Waltz">
+                <input type="submit" value="검색목록으로">
+            </form>
                         
         </div>
         <div class="recommend">
