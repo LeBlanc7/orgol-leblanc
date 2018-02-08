@@ -25,7 +25,11 @@
                 height : 640px;
                 padding : 10px 10px 10px 30px;
             }
-            #video .wrap{
+            #video .wrap1 {
+                width : 850px;
+                clear : both;
+            }
+            #video .wrap1 .wrap{
                 float : left;
                 width : 400px;
                 height : 120px;
@@ -95,7 +99,7 @@
                         }
                     })
                 });
-                $(".img").click(function(){
+                $(".img,#back").click(function(){
                     var song_name = $(this).attr('name');
 
                     $.ajax({
@@ -142,17 +146,64 @@
                 ?>
             </div>
         </div>
-        <div id="video">                    
-            <?php
-                $song = $_GET['song'];
-
-                if($song) {
-                    include 'search_song.php';
-                }
-                else {
-                    echo "<h1> Please Search Any Artists or Song Name! </h1>";
-                }
-            ?>
+        <div id="video"> 
+            <div class="wrap1">
+                <div class="wrap">
+                    <div class="image">
+                        <img src="https://img.youtube.com/vi/nVCubhQ454c/default.jpg" class="img">
+                    </div>
+                    <div class="text">
+                        <a href='https://www.youtube.com/watch?v=nVCubhQ454c' target='_blank'>Youtube에서 보기</a>
+                    </div>
+                </div> 
+                <div class="wrap">
+                        <div class="image">
+                            <img src="https://img.youtube.com/vi/nVCubhQ454c/default.jpg" class="img">
+                        </div>
+                        <div class="text">
+                            <a href='https://www.youtube.com/watch?v=nVCubhQ454c' target='_blank'>Youtube에서 보기</a>
+                        </div>
+                    </div>
+                    <div class="wrap">
+                            <div class="image">
+                                <img src="https://img.youtube.com/vi/nVCubhQ454c/default.jpg" class="img">
+                            </div>
+                            <div class="text">
+                                <a href='https://www.youtube.com/watch?v=nVCubhQ454c' target='_blank'>Youtube에서 보기</a>
+                            </div>
+                </div> 
+            </div>
+            <div class="wrap1">
+                    <hr size ="3">
+            </div>            
+            <div class="wrap1">
+                <div class="wrap">
+                    <div class="image">
+                        <img src="https://img.youtube.com/vi/nVCubhQ454c/default.jpg" class="img">
+                    </div>
+                    <div class="text">
+                        <a href='https://www.youtube.com/watch?v=nVCubhQ454c' target='_blank'>Youtube에서 보기</a>
+                    </div>
+                </div> 
+                <div class="wrap">
+                        <div class="image">
+                            <img src="https://img.youtube.com/vi/nVCubhQ454c/default.jpg" class="img">
+                        </div>
+                        <div class="text">
+                            <a href='https://www.youtube.com/watch?v=nVCubhQ454c' target='_blank'>Youtube에서 보기</a>
+                        </div>
+                    </div>
+                    <div class="wrap">
+                        <div class="image">
+                            <img src="https://img.youtube.com/vi/nVCubhQ454c/default.jpg" class="img">
+                        </div>
+                        <div class="text">
+                            <a href='https://www.youtube.com/watch?v=nVCubhQ454c' target='_blank'>Youtube에서 보기</a>
+                        </div>
+                </div> 
+            </div>
+            <button id="back" name="쇼팽">검색목록으로</button>
+                        
         </div>
         <div class="recommend">
         </div>
