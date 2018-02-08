@@ -25,6 +25,18 @@
                 height : 640px;
                 padding : 10px 10px 10px 30px;
             }
+            #video #back {
+                width : 100px;
+                height : 25px;
+                background: #b4ccd3;
+                border: none;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                font-weight : bold;
+                color: rgba(30, 22, 54, 0.6);
+                box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+            }
             #video .wrap1 {
                 width : 850px;
                 clear : both;
@@ -81,18 +93,12 @@
 
                     $.ajax({
                         type:'GET',
-                        url:'song/get_song_info.php',
+                        url:'song/get_song_info1.php',
                         dataType : "json",
                         data : {song_name : song_name},
                         success:function(data){
-                            if(data.status=='ok'){
-                                $("div#video").html(
-                                    "<h1>" + data.artist + " - " + song_name + "</h1>" +
-                                    "<iframe width='680' height='360' src='https://www.youtube.com/embed/" +
-                                    data.url + "'frameborder='0' allowfullscreen></iframe>" + "<br><br> " +
-                                    "<a href='https://www.youtube.com/watch?v=" + data.url + "'target='_blank'>Youtube에서 보기</a>"+
-                                    "<form method='get'><input type='hidden' name='song' value='Spring Waltz'><input type='submit' value='검색목록으로'></form>"
-                                );
+                            if(data[0][0]=='ok'){
+                                alert(data[0][1]);
                             }
                             else {
                                 alert("Error");
@@ -105,7 +111,7 @@
 
                     $.ajax({
                         type:'GET',
-                        url:'song/get_song_info.php',
+                        url:'song/get_song_info1.php',
                         dataType : "json",
                         data : {song_name : song_name},
                         success:function(data){
@@ -113,9 +119,9 @@
                                 $("div#video").html(
                                     "<h1>" + data.artist + " - " + song_name + "</h1>" +
                                     "<iframe width='680' height='360' src='https://www.youtube.com/embed/" +
-                                    data.url + "'frameborder='0' allowfullscreen></iframe>" + "<br><br> " +
-                                    "<a href='https://www.youtube.com/watch?v=" + data.url + "'target='_blank'>Youtube에서 보기</a>"+
-                                    "<form method='get'><input type='hidden' name='song' value='Spring Waltz'><input type='submit' value='검색목록으로'></form>"
+                                    data.url + "'frameborder='0' allowfullscreen></iframe><br><br>" +
+                                    "<a href='https://www.youtube.com/watch?v=" + data.url + "'target='_blank'>Youtube에서 보기</a><br><br>"+
+                                    "<form method='get'><input type='hidden' name='song' value='"+ data.artist +"'><input type='submit' id='back' value='검색목록으로'></form>"
                                 );
                             }
                             else {
@@ -148,62 +154,17 @@
                 ?>
             </div>
         </div>
-        <div id="video"> 
-            <div class="wrap1">
-                <div class="wrap">
-                    <div class="image">
-                        <img src="https://img.youtube.com/vi/nVCubhQ454c/default.jpg" class="img">
-                    </div>
-                    <div class="text">
-                        <a href='https://www.youtube.com/watch?v=nVCubhQ454c' target='_blank'>Youtube에서 보기</a>
-                    </div>
-                </div> 
-                <div class="wrap">
-                        <div class="image">
-                            <img src="https://img.youtube.com/vi/nVCubhQ454c/default.jpg" class="img">
-                        </div>
-                        <div class="text">
-                            <a href='https://www.youtube.com/watch?v=nVCubhQ454c' target='_blank'>Youtube에서 보기</a>
-                        </div>
-                    </div>
-                    <div class="wrap">
-                            <div class="image">
-                                <img src="https://img.youtube.com/vi/nVCubhQ454c/default.jpg" class="img">
-                            </div>
-                            <div class="text">
-                                <a href='https://www.youtube.com/watch?v=nVCubhQ454c' target='_blank'>Youtube에서 보기</a>
-                            </div>
-                </div> 
-            </div>
-            <div class="wrap1">
-                    <hr size ="3">
-            </div>            
-            <div class="wrap1">
-                <div class="wrap">
-                    <div class="image">
-                        <img src="https://img.youtube.com/vi/nVCubhQ454c/default.jpg" class="img">
-                    </div>
-                    <div class="text">
-                        <a href='https://www.youtube.com/watch?v=nVCubhQ454c' target='_blank'>Youtube에서 보기</a>
-                    </div>
-                </div> 
-                <div class="wrap">
-                        <div class="image">
-                            <img src="https://img.youtube.com/vi/nVCubhQ454c/default.jpg" class="img">
-                        </div>
-                        <div class="text">
-                            <a href='https://www.youtube.com/watch?v=nVCubhQ454c' target='_blank'>Youtube에서 보기</a>
-                        </div>
-                    </div>
-                    <div class="wrap">
-                        <div class="image">
-                            <img src="https://img.youtube.com/vi/nVCubhQ454c/default.jpg" class="img">
-                        </div>
-                        <div class="text">
-                            <a href='https://www.youtube.com/watch?v=nVCubhQ454c' target='_blank'>Youtube에서 보기</a>
-                        </div>
-                </div> 
-            </div>
+        <div id="video">                    
+            <?php
+                $song = $_GET['song'];
+
+                if($song) {
+                    include 'song/search_song.php';
+                }
+                else {
+                    echo "<h1> Please Search Any Artists or Song Name! </h1>";
+                }
+            ?>
         </div>
         <div class="recommend">
         </div>
