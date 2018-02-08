@@ -90,7 +90,8 @@
                                     "<h1>" + data.artist + " - " + song_name + "</h1>" +
                                     "<iframe width='680' height='360' src='https://www.youtube.com/embed/" +
                                     data.url + "'frameborder='0' allowfullscreen></iframe>" + "<br><br> " +
-                                    "<a href='https://www.youtube.com/watch?v=" + data.url + "'target='_blank'>Youtube에서 보기</a>"
+                                    "<a href='https://www.youtube.com/watch?v=" + data.url + "'target='_blank'>Youtube에서 보기</a>"+
+                                    "<form method='get'><input type='hidden' name='song' value='Spring Waltz'><input type='submit' value='검색목록으로'></form>"
                                 );
                             }
                             else {
@@ -113,7 +114,8 @@
                                     "<h1>" + data.artist + " - " + song_name + "</h1>" +
                                     "<iframe width='680' height='360' src='https://www.youtube.com/embed/" +
                                     data.url + "'frameborder='0' allowfullscreen></iframe>" + "<br><br> " +
-                                    "<a href='https://www.youtube.com/watch?v=" + data.url + "'target='_blank'>Youtube에서 보기</a>"
+                                    "<a href='https://www.youtube.com/watch?v=" + data.url + "'target='_blank'>Youtube에서 보기</a>"+
+                                    "<form method='get'><input type='hidden' name='song' value='Spring Waltz'><input type='submit' value='검색목록으로'></form>"
                                 );
                             }
                             else {
@@ -160,7 +162,7 @@
         </div>
         <div class="recommend">
             <form method="get"> 
-                <input type="hidden" name="Spring Waltz">
+                <input type="hidden" name="song" value="Spring Waltz">
                 <input type="submit" value="검색목록으로">
             </form>
         </div>
