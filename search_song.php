@@ -7,8 +7,12 @@
     $query = "SELECT song_artist,song_name,song_url,song_category FROM info WHERE song_artist like '%$song_name%'";
     if($result = mysqli_query($connect,$query)) {
         $song = mysqli_fetch_row($result) ;
-        if(!$song) { echo "<h1> There is no artist like $song_name in DB</h1>"; }
+        if(!$song) { echo "<h1> There is no artist like '$song_name' in DB</h1>"; }
         else {
+            echo "<div class='wrap1'>";
+            echo "<p style='font-size:18px'>&#14;Artist로 $song_name을 검색한 결과</p>";
+            echo "</div>";
+
             echo "<div class='wrap1'>";
             do {
                 echo "<div class='wrap'>";
@@ -31,12 +35,16 @@
     echo "<div class='wrap1'>";
     echo "<hr size='3'>";
     echo "</div>";
-    
+
     $query2 = "SELECT song_artist,song_name,song_url,song_category FROM info WHERE song_name like '%$song_name%'";
     if($result2 = mysqli_query($connect,$query2)) {
         $song2 = mysqli_fetch_row($result2) ;
-        if(!$song2) { echo "<h1> There is no song like $song_name in DB</h1>"; }
+        if(!$song2) { echo "<h1> There is no song like '$song_name' in DB</h1>"; }
         else {
+            echo "<div class='wrap1'>";
+            echo "<p style='font-size:18px'>&#14;Song Name으로 $song_name을 검색한 결과</p>";
+            echo "</div>";
+
             echo "<div class='wrap1'>";
             do {
                 echo "<div class='wrap'>";
