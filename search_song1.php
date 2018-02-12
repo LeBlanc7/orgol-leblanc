@@ -26,7 +26,7 @@
                 echo "</div>";
                 echo "<hr size='1'>";
                 echo "<a>$song[1]&emsp;</a>";
-                echo "<a href='https://www.youtube.com/watch?v=$song[3] 'target='_blank'>Youtube에서 보기</a>";
+                echo "<a href='https://www.youtube.com/watch?v=$song[3] 'target='_blank'>&#60;Youtube에서 보기&#62;</a>";
                 echo "</div></div>";
             } while( $song = mysqli_fetch_row($result) ) ;
             echo "</div>";

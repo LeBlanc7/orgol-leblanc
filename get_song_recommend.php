@@ -33,7 +33,7 @@
             echo "<img src='https://img.youtube.com/vi/".$data[$arr[$i]]['url']."/default.jpg' class='img' name='".$data[$arr[$i]]['name']."'></a></div>";
             echo "<div class='text'><a href='./test2.html?id=".$data[$arr[$i]]['no']."'>".$data[$arr[$i]]['artist']." - ".$data[$arr[$i]]['name']."</a>";
             echo "<hr size='1'>";
-            echo "<a href='https://www.youtube.com/watch?v=".$data[$arr[$i]]['url']."'target='_blank'>Youtube에서 보기</a></div></div>";
+            echo "<a href='https://www.youtube.com/watch?v=".$data[$arr[$i]]['url']."'target='_blank'>&#60;Youtube에서 보기&#62;</a></div></div>";
             }
         }
         else if(count($data)<4 && count($data)>1){
@@ -45,7 +45,7 @@
                 echo "<img src='https://img.youtube.com/vi/".$data[$i]['url']."/default.jpg' class='img' name='".$data[$i]['name']."'></a></div>";
                 echo "<div class='text'><a href='./test2.html?id=".$data[$i]['no']."'>".$data[$i]['artist']." - ".$data[$i]['name']."</a>";
                 echo "<hr size='1'>";
-                echo "<a href='https://www.youtube.com/watch?v=".$data[$i]['url']."'target='_blank'>Youtube에서 보기</a></div></div>";
+                echo "<a href='https://www.youtube.com/watch?v=".$data[$i]['url']."'target='_blank'>&#60;Youtube에서 보기&#62;</a></div></div>";
             }
     }
 ?>
