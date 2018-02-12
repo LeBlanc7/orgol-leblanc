@@ -29,9 +29,9 @@
         }
         for($i = 0; $i < 3; $i++){
             echo "<div class='wrap'>";
-            echo "<div class='image'><a href='./test2.html?id=".$data[$arr[$i]]['no']."'>";
+            echo "<div class='image'>";
             echo "<img src='https://img.youtube.com/vi/".$data[$arr[$i]]['url']."/default.jpg' class='img' name='".$data[$arr[$i]]['name']."'></a></div>";
-            echo "<div class='image'><a href='./test2.html?id=".$data[$arr[$i]]['no']."'>".$data[$arr[$i]]['artist']." - ".$data[$arr[$i]]['name']."</a>";
+            echo "<div class='text'><a href='./test2.html?id=".$data[$arr[$i]]['no']."'>".$data[$arr[$i]]['artist']." - ".$data[$arr[$i]]['name']."</a>";
             echo "<hr size='1'>";
             echo "<a href='https://www.youtube.com/watch?v=".$data[$arr[$i]]['url']."'target='_blank'>Youtube에서 보기</a></div></div>";
             }
@@ -41,9 +41,9 @@
                 if($data[$i]['name'] == $temp['name'])
                 continue;
                 echo "<div class='wrap'>";
-                echo "<div class='image'><a href='./test2.html?id=".$data[$i]['no']."'>";
+                echo "<div class='image'>";
                 echo "<img src='https://img.youtube.com/vi/".$data[$i]['url']."/default.jpg' class='img' name='".$data[$i]['name']."'></a></div>";
-                echo "<div class='image'><a href='./test2.html?id=".$data[$i]['no']."'>".$data[$i]['artist']." - ".$data[$i]['name']."</a>";
+                echo "<div class='text'><a href='./test2.html?id=".$data[$i]['no']."'>".$data[$i]['artist']." - ".$data[$i]['name']."</a>";
                 echo "<hr size='1'>";
                 echo "<a href='https://www.youtube.com/watch?v=".$data[$i]['url']."'target='_blank'>Youtube에서 보기</a></div></div>";
             }
