@@ -130,8 +130,9 @@
                 position : relative;
                 float : left;
                 top : 15px;
+                word-break : break-all;
                 padding-left : 5px;
-                font-size : 12px;
+                font-size : 15px;
             }
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
@@ -174,7 +175,7 @@
                 <div id="video">
                     <?php
                         if($song = $_GET['song']) {
-                            include 'song/search_song.php';
+                            include 'song/search_song1.php';
                         }
                         else {
                             echo "<h1> Please Search Any Artists or Song Name! </h1>";
